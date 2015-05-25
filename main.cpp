@@ -1,37 +1,7 @@
 #include "DxLib.h"
+
 #include "IScene.h"
-
-class KeyChecker
-{
-private:
-	char Buf[256];
-	char StateBuf[256];
-
-public:
-	KeyChecker()
-	{
-		ZeroMemory(Buf, sizeof(char) * 256);
-		ZeroMemory(StateBuf, sizeof(char) * 256);
-	}
-
-	void CheckKeyState()
-	{
-		GetHitKeyStateAll(StateBuf);
-
-		for (int i = 0; i < 256; i++)
-		{
-			if (StateBuf[i] == 1)
-				Buf[i]++;
-			else
-				Buf[i] = 0;
-		}
-	}
-
-	bool GetKeyDown(int KeyCode)
-	{
-		return (Buf[KeyCode] == 1 ? true : false);
-	}
-};
+#include "KeyDownChecker.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -46,14 +16,41 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 
 	//シーンを取得、初期化する
-	std::shared_ptr<IScene> ExecScene = CreateTitleScene();
+	std::shared_ptr<IScene> ExecScene = CreateBattleScene();// CreateMapScene();// CreateTitleScene();
 	ExecScene->Init();
+
+	//キー入力チェッククラスを作成
+	KeyDownChecker* Checker = KeyDownChecker::GetInstance();
+
+/*
+#include <memory>
+#include "MapTask.h"
+#include "PlayerTask.h"
+#include "EnemyTask.h"
+
+	std::shared_ptr<MapTask> task = std::make_shared<MapTask>();
+	std::shared_ptr<PlayerTask> task2 = std::make_shared<PlayerTask>();
+	std::shared_ptr<EnemyTask> task3 = std::make_shared<EnemyTask>();
+	task->Init();
+	task2->Init();
+	task3->Init();*/
 
 	//ゲームループ
 	while (!ProcessMessage())
 	{
 		//画面初期化
 		ClearDrawScreen();
+
+		//キー入力
+		Checker->CheckKeyState();
+
+	/*	task->Update();
+		task2->Update();
+		task3->Update();
+
+		task->Draw();
+		task2->Draw();
+		task3->Draw();*/
 
 		//シーンを実行する
 		if (!ExecScene->Exec())
@@ -63,11 +60,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			//次のシーンを取得
 			ExecScene = ExecScene->GetNextScene();
 			ExecScene->Init();
-		}
+		}/**/
 
 		//裏画面情報を表画面に転送
 		ScreenFlip();
 	}
+
+/*	task->Exit();
+	task2->Exit();
+	task3->Exit();*/
 
 	//シーンの終了処理
 	ExecScene->Exit();

@@ -14,4 +14,5 @@ public:
 };
 
 std::shared_ptr<IScene> CreateTitleScene();
-std::shared_ptr<IScene> CreatePlayScene();
+std::shared_ptr<IScene> CreateBattleScene();
+std::shared_ptr<IScene> CreateMapScene();

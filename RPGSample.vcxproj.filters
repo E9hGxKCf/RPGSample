@@ -13,26 +13,92 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{190e8c90-7a71-491f-8371-6e478b72da46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{d2b98085-8bd3-4008-a1d9-94d0ca20f91a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MapTask">
+      <UniqueIdentifier>{e5e7df70-3100-4639-a519-d9b2f1b53dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MapTask">
+      <UniqueIdentifier>{380913b1-e219-41a4-a898-ab6b3f489666}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="PlayScene.cpp">
+    <ClCompile Include="KeyDownChecker.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="BattleScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MapScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="TitleScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTaskManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyTask.cpp">
+      <Filter>ソース ファイル\MapTask</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTask.cpp">
+      <Filter>ソース ファイル\MapTask</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTask.cpp">
+      <Filter>ソース ファイル\MapTask</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCheck.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionObject.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="BattlePlayer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IScene.h">
+    <ClInclude Include="KeyDownChecker.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MapScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="TitleScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTask.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="PlayScene.h">
+    <ClInclude Include="EnemyTask.h">
+      <Filter>ヘッダー ファイル\MapTask</Filter>
+    </ClInclude>
+    <ClInclude Include="MapTask.h">
+      <Filter>ヘッダー ファイル\MapTask</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTask.h">
+      <Filter>ヘッダー ファイル\MapTask</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCheck.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionObject.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="BattlePlayer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

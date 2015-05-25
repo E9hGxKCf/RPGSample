@@ -86,13 +86,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattlePlayer.cpp" />
+    <ClCompile Include="BattleScene.cpp" />
+    <ClCompile Include="CollisionCheck.cpp" />
+    <ClCompile Include="CollisionObject.cpp" />
+    <ClCompile Include="EnemyTask.cpp" />
+    <ClCompile Include="GameTaskManager.cpp" />
+    <ClCompile Include="KeyDownChecker.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="MapScene.cpp" />
+    <ClCompile Include="MapTask.cpp" />
+    <ClCompile Include="PlayerTask.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattlePlayer.h" />
+    <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="CollisionCheck.h" />
+    <ClInclude Include="CollisionObject.h" />
+    <ClInclude Include="EnemyTask.h" />
+    <ClInclude Include="GameTask.h" />
     <ClInclude Include="IScene.h" />
-    <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="KeyDownChecker.h" />
+    <ClInclude Include="MapScene.h" />
+    <ClInclude Include="MapTask.h" />
+    <ClInclude Include="PlayerTask.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
